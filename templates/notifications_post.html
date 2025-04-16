@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Thông báo
+{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <h1 class="text-center mb-4">{{ thong_bao.tieu_de }}</h1>
+
+  <p class="text-muted text-center">
+    <i class="bi bi-calendar4-week"></i> Ngày đăng:  {{ thong_bao.ngay_dang|date:"d/m/Y" }}
+  </p>
+
+  <hr>
+  <div class="container py-4 w-75 lh-lg border border-3 border-success rounded-3 shadow-sm">
+    <div class="fs-5 mb-4 px-3">
+      {{ thong_bao.noi_dung|safe }}
+    </div>
+  </div>
+  
+  {% comment %} Tệp đính kèm {% endcomment %}
+    {% if thong_bao.tep_dinh_kem %}
+    <p class="mt-4 text-center">
+      <a href="{{ thong_bao.tep_dinh_kem.url }}" class="btn btn-outline-success" download>
+        <i class="bi bi-download"></i> Tải tệp đính kèm
+      </a>
+    </p>
+  {% endif %}
+  <hr>
+  {% comment %} Back {% endcomment %}
+  <div class="mt-4">
+    <a href="{% url 'thong-bao' %}" class="btn btn-primary">
+      <i class="bi bi-arrow-left"></i> Quay lại danh sách
+    </a>
+  </div>
+</div>
+{% endblock %}

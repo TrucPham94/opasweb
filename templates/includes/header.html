@@ -1,0 +1,49 @@
+{% load static %}
+<header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-success">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img
+            src="{% static 'images/Logo/logo-removebg-preview.png' %}"
+            alt="Logo"
+            class="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0 mx-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5 px-3 active" href="{% url 'home' %}" aria-current="page"
+                >Trang chủ <span class="visually-hidden">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5 px-3" href="{% url 'about_us' %}">Về chúng tôi</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5 px-3" href="{% url 'group' %}">Ngành hàng</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5 px-3" href="{% url 'apply' %}">Tin tuyển dụng</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white fs-5 px-3" href="{% url 'thong-bao' %}">Thông báo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>

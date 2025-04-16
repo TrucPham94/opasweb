@@ -1,0 +1,84 @@
+{% load static %}
+
+<footer>
+    <!-- sectio  -->
+    <section class="values-section py-5 text-white mt-5">
+      <div class="container">
+        <div class="row text-center">
+          <!-- Cột 1: Uy tín -->
+          <div class="col-md-4 mb-4 border-col">
+            <div class="icon mb-3 fs-1">
+              <i class="bi bi-hand-thumbs-up-fill"></i>
+            </div>
+            <h4 class="fw-bold text-warning">Uy tín</h4>
+            <p>Sản phẩm của chúng tôi là dịch vụ</p>
+            <p class="text-info">Our Product Are Service</p>
+          </div>
+
+          <!-- Cột 2: Chất lượng -->
+          <div class="col-md-4 mb-4 border-col">
+            <div class="icon mb-3 fs-1">
+              <i class="bi bi-check2-circle"></i>
+            </div>
+            <h4 class="fw-bold text-warning">Chất lượng</h4>
+            <p>
+              Không ngừng cải tiến để đảm bảo dịch vụ đạt tiêu chuẩn cao. Luôn luôn mang đến những sản phẩm chính hãng cho khách hàng</p>
+              <p class="text-info">Consistent Quality for Everyday Use</p>
+          </div>
+
+          <!-- Cột 3: Hiệu quả -->
+          <div class="col-md-4 mb-4">
+            <div class="icon mb-3 fs-1">
+              <i class="bi bi-box-seam"></i>
+            </div>
+            <h4 class="fw-bold text-warning">Hiệu quả</h4>
+            <p>
+              Giải pháp tiêu dùng tối ưu, tiết kiệm chi phí và thời gian cho khách hàng trong cuộc sống hằng ngày.
+
+            </p>
+            <p class="text-info">Efficient Solutions for Modern Living</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end section -->
+
+    
+    <div class="py-4 px-5 bg-success text-white">
+      <div class="row">
+        <div class="col-md-4 border-end">
+          <h3 class="text-center">Liên hệ</h3>
+          <ul class="list-unstyled text-center">
+            <li class="p-3">
+              <i class="bi bi-telephone"></i> Điện thoại: +84 123 456 789
+            </li>
+            <li class="p-3">
+              <i class="bi bi-envelope"></i> Email: info@example.com
+            </li>
+            <li class="p-3">
+              <i class="bi bi-geo-alt"></i> Địa chỉ: 123 Đường ABC, TP. XYZ
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 border-end">
+          <h3 class="text-center">Liên kết nhanh</h3>
+          <ul class="list-unstyled text-center">
+            <li class=""><a href="{% url 'home' %}" class="text-decoration-none text-white nav-link p-2">Trang chủ</a></li>
+            <li class=""><a href="{% url 'group' %}" class="text-decoration-none text-white nav-link p-2">Ngành hàng</a></li>
+            <li class=""><a href="{% url 'apply' %}" class="text-decoration-none text-white nav-link p-2">Tuyển dụng</a></li>
+            <li class=""><a href="{% url 'thong-bao' %}" class="text-decoration-none text-white nav-link p-2">Thông báo</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="map text-center mx-auto">
+            <h3 class="text-center">Bản đồ</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.467359232989!2d105.76192647527778!3d10.060737990047766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a087e4002d4c1b%3A0xb2d6c9deef4525e!2zOEEgxJAuIEPDoWNoIE3huqFuZyBUaMOhbmcgOCwgUCwgQsOsbmggVGjhu6d5LCBD4bqnbiBUaMahLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1744627278325!5m2!1svi!2s" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+          </div>          
+          <p class="mb-0 text-center">&copy; 2025 Công ty Cổ Phần TMDV OPAS.</p>
+        </div>
+      </div>
+     
+    </div>
+
+  </footer>

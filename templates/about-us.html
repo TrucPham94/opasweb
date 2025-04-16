@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <div class="container">
+            <h1 class="text-center mt-3">Về chúng tôi</h1>
+            <hr>
+            {% for info in about  %}
+            <h3 class=" bg-info text-white rounded p-3 mt-4 mb-3">
+
+                {{ info.title }}
+            </h3>
+            <p>
+                {{ info.content|safe }}
+            </p>
+            
+            {% endfor %}
+    </div>
+{% endblock %}

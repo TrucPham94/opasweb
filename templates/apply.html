@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="container">
+  <h2 class="text-center p-3">Tin tuyển dụng</h2>
+  <hr />
+  <!-- 1 tin -->
+   {% for apply in apply_memos  %}
+  <div class="row bg-light p-3 mt-2 border border-success border-bottom">
+    <div class="col-md-3 p-3">
+      <img
+        src="{{apply.thumbnail.url}}"
+        alt="img"
+        class="img-fluid w-75"
+      />
+    </div>
+    <div class="col-md-9">
+      <p class="title fs-4 fw-bold">{{apply.tieu_de}}</p>
+      <p class="title fs-6 fw-bold text-muted">
+        <i class="bi bi-calendar4-week"></i>
+        Ngày đăng: {{ apply.ngay_dang|date:"d/m/Y" }}
+      </p>
+      <p class="desc p-2 fs-5">
+        {{ apply.noi_dung|safe|striptags|truncatewords:20 }}
+      </p>
+
+      <a href="{% url 'tuyen_dung_chi_tiet' apply.id %}" class="btn btn-outline-success mt-auto">
+        Xem chi tiết
+      </a>
+    </div>
+    <!-- end -->
+  </div>
+  {% endfor %}
+  <!-- 1 tin -->
+</div>
+{% endblock %}

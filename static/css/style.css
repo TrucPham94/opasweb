@@ -1,0 +1,113 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+/* header */
+.logo {
+    width: 200px;
+    /* height: 100px; */
+    margin: 0 auto;
+    display: block;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+    background-color: rgb(23, 221, 59);
+    border-radius: 10px;
+    
+}
+
+
+/* about us */
+.about-us-desc{
+    
+    line-height: 2;
+    
+}
+
+
+/* custom btn */
+.custom-btn {
+    width: 200px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #efb908; /* Màu nâu vàng */
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    box-shadow: 0 4px 0 #efb908; /* Đổ bóng dưới */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .custom-btn:hover {
+    transform: translateY(1px);
+    box-shadow: 0 2px 0 #efb908;
+  }
+  
+
+
+/* Thong bao */
+.img-information {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
+
+.thong-bao {
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    margin-bottom: 20px; /* Khoảng cách giữa các thông báo */ 
+    
+}
+
+
+.brand-item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.brand-item:hover img {
+    transform: scale(1.05); /* Tăng kích thước ảnh khi hover */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển tiếp */
+}
+
+/* footer */
+
+.values-section {
+    background-color: #0d1b2a; /* Tùy chỉnh theo ảnh nền */
+    background-image: url('/static/images/background.jpg'); /* nếu có */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .values-section .icon i {
+    color: white;
+  }
+  
+  .values-section h4 {
+    color: #f7931e; /* Màu cam nổi bật */
+  }
+  
+  .values-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+/* Tạo viền phải mờ giữa các cột */
+.border-col {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Loại bỏ viền bên phải của cột cuối */
+  .border-col:last-of-type {
+    border-right: none;
+  }
+  
+

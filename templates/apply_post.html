@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-4 w-75 lh-lg bg-light rounded-3 shadow-sm">
+  <h2 class="text-center text-success mb-4 fw-bold">
+    {{ tuyen_dung.tieu_de }}
+  </h2>
+
+  <p class="text-center text-muted mb-3">
+    Ngày đăng: {{ tuyen_dung.ngay_dang|date:"d/m/Y H:i" }}
+  </p>
+
+  
+
+  <div class="fs-5 mb-4">
+    {{ tuyen_dung.noi_dung|safe }}
+  </div>
+
+  {% if tuyen_dung.tep_dinh_kem %}
+    <div class="mt-4">
+      <p class="fw-bold">Tệp đính kèm:</p>
+      <a href="{{ tuyen_dung.tep_dinh_kem.url }}" class="btn btn-outline-primary" download>
+      Tải về
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="mt-4">
+    <a href="{% url 'tuyen-dung' %}" class="btn btn-primary">
+      <i class="bi bi-arrow-left"></i> Quay lại danh sách
+    </a>
+  </div>
+</div>
+{% endblock %}

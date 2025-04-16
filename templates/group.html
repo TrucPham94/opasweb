@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-3">Ngành hàng kinh doanh</h1>
+    <hr>
+
+    <div class="row">
+        <!-- Col-3: Tên ngành hàng -->
+        <div class="col-md-3 bg-light p-3 border border-2 rounded-start">
+            <h2 class="text-center bg-success text-white rounded p-2">Ngành hàng</h2>
+            <div class="nav flex-column nav-pills" id="nganhhang-tab" role="tablist" aria-orientation="vertical">
+                {% for nganh_hang in nganh_hang_list %}
+                    <button class="nav-link {% if forloop.first %}active{% endif %}"
+                            id="tab-{{ nganh_hang.name|slugify }}"
+                            data-bs-toggle="pill"
+                            data-bs-target="#pane-{{ nganh_hang.name|slugify }}"
+                            type="button"
+                            role="tab"
+                            aria-controls="pane-{{ nganh_hang.name|slugify }}">
+                        {{ nganh_hang.name }}
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Col-9: Nội dung ngành hàng -->
+        <div class="col-md-9 bg-light p-3 border border-2 rounded-end">
+            <div class="tab-content" id="nganhhang-tabContent">
+                {% for nganh_hang in nganh_hang_list %}
+                    <div class="tab-pane fade {% if forloop.first %}show active{% endif %}"
+                         id="pane-{{ nganh_hang.name|slugify }}"
+                         role="tabpanel"
+                         aria-labelledby="tab-{{ nganh_hang.name|slugify }}">
+
+                        <h3 class="text-center bg-success text-white rounded p-2">{{ nganh_hang.name }}</h3>
+                        <p class="text-center">{{ nganh_hang.introduce|safe }}</p>
+
+                        <h3 class="text-center bg-success text-white rounded p-2 mt-4 mb-3">
+                            Các nhãn hiệu đang kinh doanh
+                        </h3>
+                        <div class="row">
+                            {% for san_pham in san_pham_list %}
+                                {% if san_pham.nganh_hang.name == nganh_hang.name %}
+                                    <div class="col-md-3 mb-3 text-center d-flex flex-column align-items-center">
+                                        <img src="{{ san_pham.hinh_anh.url }}"
+                                            style="height: 200px; object-fit: contain;"
+                                            class="img-fluid mb-2 border border-outline-success" alt="{{ san_pham.name }}">
+                                        <p class="text-center fs-4 fw-bold text-info">{{ san_pham.name }}</p>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Trang chủ
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="hero">
+            <div class="container mt-5 mb-5">
+                <div class="row border shadow-sm p-3 mb-5 bg-body rounded">
+                    <div class="col-md-12 text-center">
+                      <h1 class="fw-bold">
+                          Chào mừng đến với website chính thức của Công Ty OPAS
+                      </h1>
+                      <p>Đây là nơi bạn có thể tìm thấy thông tin về chúng tôi.</p>
+                    </div>
+                </div>
+            </div>
+      </div>
+        <div class="about-us">
+        <!-- Về chúng tôi -->
+            <h2 class="fw-bold p-3 bg-primary text-white text-center">Về chúng tôi</h2>
+            
+            <p class="fs-6 text-center px-4 about-us-desc">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta
+                cupiditate, unde iusto dolorem esse animi earum fuga ex nulla
+                ducimus minima magnam neque voluptatum voluptas quasi quia
+                inventore adipisci assumenda in deleniti architecto eos tenetur.
+                Ex inventore similique dolorum impedit cupiditate maxime error
+                amet molestias architecto repudiandae corrupti, voluptas sint
+                expedita libero ipsa beatae! Minima, dolores commodi ab tempora
+                dignissimos dolorum. Laudantium, repellat fugiat, reprehenderit
+                perspiciatis error nostrum magni minima id explicabo, velit
+                accusantium magnam!
+            </p>
+        
+            <div class="text-center">
+                <a href="{% url 'about_us' %}" class="custom-btn text-decoration-none">Xem thêm</a>
+            </div>
+        
+        </div>
+
+        <!-- Ngành hàng -->
+        <div class="group-brand mt-5">
+                <div class="col-md-12 text-center">
+                  <h2 class="fw-bold p-3 bg-primary text-white">Ngành hàng</h2>
+                  <p>
+                    Chúng tôi cung cấp nhiều ngành hàng khác nhau với đa dạng các sản
+                    phẩm tiêu dùng hàng ngày
+                  </p>
+                </div>
+                {% comment %} Image {% endcomment %}
+
+                <div class="mt-5 row">
+                  {% for nganh in nganh_hang_list %}
+                    <div class="col-md-4 mb-4">
+                      <div class="card shadow-sm h-100 border-0">
+                        <a href="#" class="text-decoration-none text-dark text-center p-3">
+                          {% if nganh.logo %}
+                            <img src="{{ nganh.logo.url }}" alt="{{ nganh.name }}" class="img-fluid "/>
+                          {% else %}
+                            <img src="{% static 'images/Logo/default-logo.png' %}" alt="No logo" class="img-fluid ">
+                          {% endif %}
+                          
+                        </a>
+                      </div>
+                    </div>
+                  {% empty %}
+                    <p class="text-center text-muted">Chưa có ngành hàng nào được đăng.</p>
+                  {% endfor %}
+
+                  <div class="text-center mt-4">
+                    <a href="{% url 'group' %}" class="custom-btn text-decoration-none">
+                      Xem chi tiết hơn về các sản phẩm của ngành hàng
+                    </a>
+                </div>
+                
+                
+             
+        </div>
+
+        <div class="infomation mt-5">
+            <!-- Thông báo-->
+        <div class="col-md-12 text-center">
+            <h2 class="fw-bold p-3 bg-primary text-white">Thông báo</h2>
+          </div>
+   
+          <div class="row mt-3 d-flex justify-content-center">
+            {% for thong_bao  in anouncement_list  %}
+            <a href="/" class="col-md-3 mx-4 shadow-sm mt-3 text-decoration-none text-dark thong-bao">
+              <img
+                src="{{ thong_bao.thumbnail.url }}"
+                class="img-fluid img-information p-2" alt="info"
+              />
+              <p class="fw-bold fs-5 mt-3 text-center">{{thong_bao.tieu_de}}</p>
+            </a>
+            {% endfor %}
+                 
+          </div>
+
+          <div class="text-center mt-4">
+            <a href="{% url 'thong-bao' %}" class="custom-btn text-decoration-none">Xem thêm</a>
+          </div>
+        </div>
+
+        <div class="infomation mt-5">
+          <!-- Thông báo-->
+      <div class="col-md-12 text-center">
+          <h2 class="fw-bold p-3 bg-primary text-white">Tin tuyển dụng</h2>
+        </div>
+ 
+        <div class="row mt-3 d-flex justify-content-center">
+
+          <a href="/" class="col-md-3 mx-4 shadow-sm mt-3 text-decoration-none text-dark thong-bao">
+            <img
+              src="../static/images/Logo/thong bao.png"
+              class="img-fluid img-information p-2"
+              alt="info"
+            />
+            <p class="fw-bold fs-5 mt-3 text-center">Tin tuyển dụng tháng xx/xxxx</p>
+          </a>
+
+          
+
+          <a href="/" class="col-md-3 mx-4 shadow-sm mt-3 text-decoration-none text-dark thong-bao">
+            <img
+              src="../static/images/Logo/thong bao.png"
+              class="img-fluid img-information p-2"
+              alt="info"
+            />
+            <p class="fw-bold fs-5 mt-3 text-center">Tin tuyển dụng tháng xx/xxxx</p>
+          </a>
+
+          <a href="/" class="col-md-3 mx-4 shadow-sm mt-3 text-decoration-none text-dark thong-bao">
+            <img
+              src="../static/images/Logo/thong bao.png"
+              class="img-fluid img-information p-2"
+              alt="info"
+            />
+            <p class="fw-bold fs-5 mt-3 text-center">Tin tuyển dụng tháng xx/xxxx</p>
+          </a>       
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="/" class="custom-btn text-decoration-none">Xem thêm</a>
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+{% endblock %}
+    
