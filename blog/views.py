@@ -4,11 +4,22 @@ from .models import NganhHang, SanPham, AboutUs, ThongBao
 
 def index(request):
     nganh_hang_list = NganhHang.objects.filter(status=True).order_by("name")
-    anouncement_list = ThongBao.objects.all().order_by("-ngay_dang")[:3]
+    anouncement_list = (
+        ThongBao.objects.all().order_by("-ngay_dang").filter(loai_bai_viet="thongbao")
+    )
+
+    apply_memos = (
+        ThongBao.objects.all().order_by("-ngay_dang").filter(loai_bai_viet="tuyendung")
+    )
+
     return render(
         request,
         "index.html",
-        {"nganh_hang_list": nganh_hang_list, "anouncement_list": anouncement_list},
+        {
+            "nganh_hang_list": nganh_hang_list,
+            "anouncement_list": anouncement_list,
+            "apply_memos": apply_memos,
+        },
     )
 
 
