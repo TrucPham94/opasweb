@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NganhHang, SanPham, AboutUs, ThongBao
+from .models import NganhHang, SanPham, AboutUs, ThongBao, Banner
 
 
 # Register your models here.
@@ -42,3 +42,12 @@ class ThongBaoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(ThongBao, ThongBaoAdmin)
+
+
+# Banner
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ("id", "status")
+    list_filter = ("status",)
+
+
+admin.site.register(Banner, BannerAdmin)

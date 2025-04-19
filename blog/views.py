@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import NganhHang, SanPham, AboutUs, ThongBao
+from .models import NganhHang, SanPham, AboutUs, ThongBao, Banner
 
 
 def index(request):
@@ -12,6 +12,8 @@ def index(request):
         ThongBao.objects.all().order_by("-ngay_dang").filter(loai_bai_viet="tuyendung")
     )
 
+    banners = Banner.objects.filter(status=True)
+
     return render(
         request,
         "index.html",
@@ -19,6 +21,7 @@ def index(request):
             "nganh_hang_list": nganh_hang_list,
             "anouncement_list": anouncement_list,
             "apply_memos": apply_memos,
+            "banners": banners,
         },
     )
 

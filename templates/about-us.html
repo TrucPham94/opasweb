@@ -3,13 +3,12 @@
 
 {% block content %}
         <div class="container">
-            <h1 class="text-center mt-3">Về chúng tôi</h1>
+            <h1 class="text-center fw-bold p-3 bg-info mt-3 rounded">Về chúng tôi</h1>    
             <hr>
             {% for info in about  %}
-            <h3 class=" bg-info text-white rounded p-3 mt-4 mb-3">
-
+            <h5 class=" bg-primary text-white rounded p-2 mt-4 mb-3">
                 {{ info.title }}
-            </h3>
+            </h5>
             <p>
                 {{ info.content|safe }}
             </p>

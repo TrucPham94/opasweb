@@ -91,3 +91,23 @@ class ThongBao(models.Model):
         verbose_name = "Thông báo"
         verbose_name_plural = "Thông báo"
         ordering = ["-ngay_dang"]  # Mới nhất lên đầu
+
+
+# Banner
+class Banner(models.Model):
+    image = models.ImageField(
+        upload_to=RenameFileImage(
+            "banner", "id"
+        ),  # hoặc 'banners/' nếu không cần đổi tên
+        blank=False,
+        null=False,
+    )
+
+    status = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"Banner #{self.id}"
+
+    class Meta:
+        verbose_name = "Banner"
+        verbose_name_plural = "Banner"

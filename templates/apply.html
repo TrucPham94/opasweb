@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <div class="container">
-  <h2 class="text-center p-3">Tin tuyển dụng</h2>
+  <h1 class="text-center fw-bold p-3 bg-info mt-5 rounded">Tin tuyển dụng</h1>    
   <hr />
   <!-- 1 tin -->
    {% for apply in apply_memos  %}
@@ -22,9 +22,9 @@
         {{ apply.noi_dung|safe|striptags|truncatewords:20 }}
       </p>
 
-      <a href="{% url 'tuyen_dung_chi_tiet' apply.id %}" class="btn btn-outline-success mt-auto">
-        Xem chi tiết
-      </a>
+      
+      <a href="{% url 'tuyen_dung_chi_tiet' apply.id %}" class="btn full blue">Xem chi tiết <span class="arrow">&#8250;</span></a>
+      
     </div>
     <!-- end -->
   </div>

@@ -2,16 +2,16 @@
 {% load static %}
 {% block content %}
 <div class="container">
-    <h1 class="text-center mt-3">Ngành hàng kinh doanh</h1>
+    <h1 class="text-center fw-bold p-3 bg-info mt-5 rounded">Ngành hàng kinh doanh</h1>    
     <hr>
 
     <div class="row">
         <!-- Col-3: Tên ngành hàng -->
         <div class="col-md-3 bg-light p-3 border border-2 rounded-start">
-            <h2 class="text-center bg-success text-white rounded p-2">Ngành hàng</h2>
+            <h2 class="text-center bg-green text-white rounded p-2">Ngành hàng</h2>
             <div class="nav flex-column nav-pills" id="nganhhang-tab" role="tablist" aria-orientation="vertical">
                 {% for nganh_hang in nganh_hang_list %}
-                    <button class="nav-link {% if forloop.first %}active{% endif %}"
+                    <button class="nav-link {% if forloop.first %}active{% endif %} btn full orange mb-2 p-2"
                             id="tab-{{ nganh_hang.name|slugify }}"
                             data-bs-toggle="pill"
                             data-bs-target="#pane-{{ nganh_hang.name|slugify }}"
@@ -33,10 +33,10 @@
                          role="tabpanel"
                          aria-labelledby="tab-{{ nganh_hang.name|slugify }}">
 
-                        <h3 class="text-center bg-success text-white rounded p-2">{{ nganh_hang.name }}</h3>
+                        <h3 class="text-center bg-green text-white rounded p-2">{{ nganh_hang.name }}</h3>
                         <p class="text-center">{{ nganh_hang.introduce|safe }}</p>
 
-                        <h3 class="text-center bg-success text-white rounded p-2 mt-4 mb-3">
+                        <h3 class="text-center bg-green text-white rounded p-2 mt-4 mb-3">
                             Các nhãn hiệu đang kinh doanh
                         </h3>
                         <div class="row">

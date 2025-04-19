@@ -1,6 +1,6 @@
 {% load static %}
 <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-success">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">
           <img
@@ -22,27 +22,39 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0 mx-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5 px-3 active" href="{% url 'home' %}" aria-current="page"
-                >Trang chủ <span class="visually-hidden">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5 px-3" href="{% url 'about_us' %}">Về chúng tôi</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5 px-3" href="{% url 'group' %}">Ngành hàng</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5 px-3" href="{% url 'apply' %}">Tin tuyển dụng</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5 px-3" href="{% url 'thong-bao' %}">Thông báo</a>
-            </li>
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0 mx-auto">
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/' %}active fw-bold{% endif %}" 
+                   href="{% url 'home' %}">Trang chủ</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/about-us/' %}active fw-bold{% endif %}" 
+                   href="{% url 'about_us' %}">Về chúng tôi</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/group/' %}active fw-bold{% endif %}" 
+                   href="{% url 'group' %}">Ngành hàng</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/apply/' %}active fw-bold{% endif %}" 
+                   href="{% url 'tuyen-dung' %}">Tin tuyển dụng</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/notifications/' %}active fw-bold{% endif %}" 
+                   href="{% url 'thong-bao' %}">Thông báo</a>
+              </li>
+            </ul>
+                        
           </ul>
+
+          {% comment %} <a href="{% url 'admin:index' %}" class="see-more-btn" role="button">Admin</a> {% endcomment %}
+
+          
+
         </div>
       </div>
     </nav>

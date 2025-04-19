@@ -1,0 +1,102 @@
+<!-- templates/hr/index.html -->
+{% extends 'base_hr.html' %}
+
+{% block content %}
+<div class="container mt-3">
+    <h1 class="text-center">Trang Quản Lý Nhân Sự</h1>
+    <p class="text-center">Chào mừng bạn đến với hệ thống HR!</p>
+    <hr>
+    
+    <div class="row g-4">
+    
+    <div class="col-md-4">
+        <div class="card module-card h-100">
+        <div class="card-body">
+            <div class="module-title mb-2 fs-5 fw-bold"> <i class="bi bi-person-plus-fill"></i> Phân hệ Nhân sự</div>
+                <ul class="list-unstyled">
+                    <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Thêm nhân viên</a></li>
+                    <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Danh sách nhân viên</a></li>
+                    <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Quản lý phòng ban</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Phân hệ Chấm công -->
+    <div class="col-md-4">
+        <div class="card module-card h-100">
+        <div class="card-body">
+           
+            <div class="module-title mb-2 fs-5 fw-bold"> <i class="bi bi-clock-fill"></i> Phân hệ Chấm công</div>
+            <ul class="list-unstyled">
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Ghi nhận chấm công</a></li>
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Báo cáo ngày công</a></li>
+            <li class="p-2 link-item">
+                <a href="#" class="module-link text-primary fw-bold">Thống kê đi trễ/về sớm</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <!-- Phân hệ Lương thưởng -->
+    <div class="col-md-4">
+        <div class="card module-card h-100">
+        <div class="card-body">
+           
+            <div class="module-title mb-2 fs-5 fw-bold"> <i class="bi bi-cash-stack"></i> Phân hệ Lương thưởng</div>
+            <ul class="list-unstyled">
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Tính lương</a></li>
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Quản lý phụ cấp</a></li>
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Xuất bảng lương</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <!-- Phân hệ Tuyển dụng -->
+    <div class="col-md-4">
+        <div class="card module-card h-100">
+        <div class="card-body">
+          
+            <div class="module-title mb-2 fs-5 fw-bold"> <i class="bi bi-person-badge-fill"></i> Phân hệ Tuyển dụng</div>
+            <ul class="list-unstyled">
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Đăng tin tuyển dụng</a></li>
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Quản lý ứng viên</a></li>
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Lưu hồ sơ ứng viên</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <!-- Phân hệ Khen thưởng – Kỷ luật -->
+    <div class="col-md-4">
+        <div class="card module-card h-100">
+        <div class="card-body">
+          
+            <div class="module-title mb-2 fs-5 fw-bold"> <i class="bi bi-award-fill"></i> Khen thưởng – Kỷ luật</div>
+            <ul class="list-unstyled">
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Ghi nhận thành tích</a></li>
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Ghi nhận vi phạm</a></li>
+            <li class="p-2 link-item">
+                <a href="#" class="module-link text-primary fw-bold">Quản lý mức thưởng/phạt</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <!-- Phân hệ Báo cáo -->
+    <div class="col-md-4">
+        <div class="card module-card h-100">
+        <div class="card-body">
+            
+            <div class="module-title mb-2 fs-5 fw-bold"> <i class="bi bi-bar-chart-fill"></i> Phân hệ Báo cáo</div>
+            <ul class="list-unstyled">
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Báo cáo nhân sự</a></li>
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Biểu đồ định biên</a></li>
+            <li class="p-2 link-item"><a href="#" class="module-link text-primary fw-bold">Biến động nhân sự</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+      
+</div>
+{% endblock %}

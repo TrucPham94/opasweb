@@ -1,0 +1,64 @@
+{% load static %}
+<header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img
+            src="{% static 'images/Logo/logo-removebg-preview.png' %}"
+            alt="Logo"
+            class="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0 mx-auto">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0 mx-auto">
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/' %}active fw-bold{% endif %}" 
+                   href="{% url 'home' %}">Chấm công</a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/' %}active fw-bold{% endif %}" 
+                   href="{% url 'home' %}">Lương thưởng</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/' %}active fw-bold{% endif %}" 
+                   href="{% url 'home' %}">Tuyển dụng</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/' %}active fw-bold{% endif %}" 
+                   href="{% url 'home' %}">Khen thưởng - kỷ luật</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/' %}active fw-bold{% endif %}" 
+                   href="{% url 'home' %}">Báo cáo</a>
+              </li>
+            
+              
+            </ul>
+                        
+          </ul>
+
+          {% comment %} <a href="{% url 'admin:index' %}" class="see-more-btn" role="button">Admin</a> {% endcomment %}
+
+          
+
+        </div>
+      </div>
+    </nav>
+  </header>

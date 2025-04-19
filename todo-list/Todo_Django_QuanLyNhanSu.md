@@ -40,3 +40,8 @@
 - [ ] Xử lý phân quyền: chỉ admin mới được sửa nhân sự
 - [ ] Triển khai lên hosting (PythonAnywhere, VPS,…)
 - [ ] Backup database + media định kỳ
+
+
+
+<!-- Cần làm -->
+gắn url từ bài viết trang index

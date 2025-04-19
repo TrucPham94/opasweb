@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block content %}
-<div class="container py-4 w-75 lh-lg bg-light rounded-3 shadow-sm">
+<div class="container p-3 lh-lg ">
   <h2 class="text-center text-success mb-4 fw-bold">
     {{ tuyen_dung.tieu_de }}
   </h2>
 
-  <p class="text-center text-muted mb-3">
-    Ngày đăng: {{ tuyen_dung.ngay_dang|date:"d/m/Y H:i" }}
+  <p class="text-center text-muted mb-3 fw-bold">
+    <i class="bi bi-calendar4-week"></i> Ngày đăng: {{ tuyen_dung.ngay_dang|date:"d/m/Y" }}
   </p>
-
+  <hr>
   
 
-  <div class="fs-5 mb-4">
+  <div class="fs-5 mb-4 border border-3 border-success p-3 rounded-3 shadow-sm rich-text ">
     {{ tuyen_dung.noi_dung|safe }}
   </div>
 
@@ -28,7 +28,7 @@
 
   <div class="mt-4">
     <a href="{% url 'tuyen-dung' %}" class="btn btn-primary">
-      <i class="bi bi-arrow-left"></i> Quay lại danh sách
+      <i class="bi bi-arrow-left"></i> Quay lại
     </a>
   </div>
 </div>

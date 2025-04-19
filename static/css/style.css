@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "FZPoppins";
+  src: url('../font/FZ\ Poppins-Light.ttf');
+}
+
 body {
-    font-family: "Lato", sans-serif;
+  font-family: "FZPoppins", sans-serif;
+  /* font-family: "Poppins", sans-serif;  "Lexend"*/
+  font-size: 14px;
+    
 }
 
 /* header */
@@ -12,11 +20,19 @@ body {
 
 .nav-link:hover {
     text-decoration: none;
-    background-color: rgb(23, 221, 59);
+    background-color: #f77062;
     border-radius: 10px;
     
 }
+.carousel-img{
+  max-height: 500px;
+  object-fit: cover;
+}
 
+.carousel-indicators li::marker {
+  content: "";
+  display: none;
+}
 
 /* about us */
 .about-us-desc{
@@ -111,3 +127,213 @@ body {
   }
   
 
+
+  .bg-green-light {
+    background-color: #d4edda; /* Xanh lá nhạt */
+  }
+
+  .bg-green {
+    background-color: #28a745; /* Xanh lá tiêu chuẩn */
+  }
+
+  .bg-green-dark {
+    background-color: #155724; /* Xanh lá đậm */
+  }
+
+  .text-green {
+    color: #28a745; /* Màu chữ xanh lá */
+  }
+
+  .text-green-dark {
+    color: #155724; /* Màu chữ xanh lá đậm */
+  }
+
+  .border-green {
+    border: 1px solid #28a745; /* Viền xanh lá */
+  }
+
+  .border-green-dark {
+    border: 1px solid #155724; /* Viền xanh lá đậm */
+  }
+
+
+  /* custon btn */
+  .see-more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    border: 2px solid #e53935;
+    border-radius: 50px;
+    background-color: transparent;
+    color: #e53935;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .see-more-btn:hover {
+    background-color: #e53935;
+    color: white;
+  }
+
+  .see-more-btn .arrow {
+    margin-left: 10px;
+    font-size: 16px;
+    transition: margin-left 0.2s ease;
+  }
+
+  .see-more-btn:hover .arrow {
+    margin-left: 14px;
+  }
+
+  .gradient-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    background: white;
+    border-radius: 12px;
+    text-decoration: none;
+    position: relative;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(90deg, #f00063, #7b2ff7); /* màu viền */
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 0 0 30px rgba(200, 0, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .gradient-btn:hover {
+    box-shadow: 0 0 40px rgba(200, 0, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* btn set */
+  
+/***
+<!-- BỘ NÚT "READ MORE" ĐẦY ĐỦ 8 PHONG CÁCH -->
+<div class="button-set">
+  <!-- Full background buttons -->
+  <a href="#" class="btn full black">READ MORE <span class="arrow">&#8250;</span></a>
+  <a href="#" class="btn full blue">READ MORE <span class="arrow">&#8250;</span></a>
+  <a href="#" class="btn full orange">READ MORE <span class="arrow">&#8250;</span></a>
+  <a href="#" class="btn full purple">READ MORE <span class="arrow">&#8250;</span></a>
+
+  <!-- Outline buttons -->
+  <a href="#" class="btn outline black">READ MORE <span class="arrow">&#8250;</span></a>
+  <a href="#" class="btn outline blue">READ MORE <span class="arrow">&#8250;</span></a>
+  <a href="#" class="btn outline orange">READ MORE <span class="arrow">&#8250;</span></a>
+  <a href="#" class="btn outline purple">READ MORE <span class="arrow">&#8250;</span></a>
+</div>
+***/
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  
+}
+
+.btn .arrow {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+/* FULL BACKGROUND STYLES */
+.btn.full.black {
+  background: #000;
+  color: white;
+}
+
+.btn.full.blue {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+}
+
+.btn.full.orange {
+  background: linear-gradient(to right, #f77062, #fe5196);
+  color: white;
+}
+
+.btn.full.purple {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  color: white;
+}
+
+/* OUTLINE STYLES */
+.btn.outline {
+  background: white;
+  border: 1px solid;
+  border-radius: 999px;
+}
+
+.btn.outline.black {
+  color: #000;
+  border-color: #000;
+}
+
+.btn.outline.blue {
+  color: #00bfff;
+  border-image: linear-gradient(to right, #4facfe, #00f2fe) 1;
+}
+
+.btn.outline.orange {
+  color: #f77062;
+  border-image: linear-gradient(to right, #f77062, #fe5196) 1;
+}
+
+.btn.outline.purple {
+  color: #a18cd1;
+  border-image: linear-gradient(to right, #a18cd1, #fbc2eb) 1;
+}
+
+/* Hover effect */
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Ảnh tràn ckeditor */
+/* Giới hạn ảnh trong nội dung CKEditor */
+
+.ck-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    object-fit: contain;
+}
+
+.rich-text img {
+  max-width: 100%;
+  max-height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* hr */
+.module-link {
+  text-decoration: none;
+  padding: 5px;
+  
+
+}
+
+.module-link:hover {
+  background-color: #89d99c;
+  border-radius: 10px;
+}

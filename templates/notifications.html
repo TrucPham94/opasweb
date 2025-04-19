@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
   <div class="container">
-    <h1 class="text-center fw-bold p-3 bg-info mt-5 rounded">THÔNG BÁO</h1>    
+    <h1 class="text-center fw-bold p-3 bg-info mt-5 rounded">Thông báo</h1>    
     <hr />
     {% for thong_bao in notifications %}
   <div class="row bg-light p-3 border border-success rounded-3 mb-4">
@@ -17,12 +17,11 @@
       <p class="desc fs-5 text-muted">
         {{ thong_bao.noi_dung|safe|striptags|truncatewords:20 }}
       </p>
-      <a href="{% url 'thong_bao_chi_tiet' thong_bao.id %}" class="btn btn-outline-success btn-sm mt-2">
-        Xem thêm
-      </a>
+      
+      <a href="{% url 'thong_bao_chi_tiet' thong_bao.id %}" class="btn full orange">Xem thêm <span class="arrow">&#8250;</span></a>
       {% comment %} Tải file đính kèm nếu có {% endcomment %}
       {% if thong_bao.tep_dinh_kem %}
-        <a href="{{ thong_bao.tep_dinh_kem.url }}" class="btn btn-outline-primary btn-sm mt-2 ms-2" download>
+        <a href="{{ thong_bao.tep_dinh_kem.url }}" class="btn full blue" download>
           <i class="bi bi-download"></i> Tải tệp
         </a>
       {% endif %}
