@@ -1,0 +1,73 @@
+
+{% extends 'base_hr.html' %}
+
+{% block content %}
+<div class="container px-3 mt-3 border border-1 rounded">
+    <h1 class="text-center mt-3 fw-bold">Danh sách nhân viên</h1>
+    <hr>
+    
+   <div
+    class="table-responsive"
+   >
+    <table
+      class="table"
+    >
+      <thead>
+        <tr >
+          
+          <th>#</th>
+          <th>Họ và tên</th>
+          {% comment %} <th>Căn cước công dân</th> {% endcomment %}
+          {% comment %} <th>Email</th> {% endcomment %}
+          <th>Điện thoại</th>
+          <th>Ngày sinh</th>
+          <th>Giới tính</th>
+          <th>Phòng ban</th>
+          <th>Chức vụ</th>
+          <th>Địa chỉ</th>
+          <th>Ngày vào làm</th>
+          <th>Ghi chú</th>
+          <th>Chi tiết</th>
+
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for nhan_vien in nhan_vien_list  %}
+        <tr class="">
+          <td>{{ forloop.counter }}</td>
+          <td>{{ nhan_vien.fullName }}</td>
+          {% comment %} <td>{{ nhan_vien.idNumber }}</td> {% endcomment %}
+          {% comment %} <td>{{ nhan_vien.email }}</td> {% endcomment %}
+          <td>{{ nhan_vien.phone }}</td>
+          <td>{{ nhan_vien.dob|date:"d/m/Y" }}</td>
+          <td>{{ nhan_vien.gender }}</td>
+          <td>{{ nhan_vien.department }}</td>
+          <td>{{ nhan_vien.position }}</td>
+          <td>{{ nhan_vien.address }}</td>
+          <td>{{ nhan_vien.startDate|date:"d/m/Y" }}</td>
+          <td>{{ nhan_vien.notes }}</td>
+          <td>
+            <a href="{% url 'chi_tiet_nhan_vien' nhan_vien.id %}" class="btn btn-sm btn-outline-primary">Xem</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+   </div>
+
+   <div class="mb-3 text-end">
+    <a href="{% url 'tai_danh_sach' %}" class="btn full orange" download>
+      <i class="bi bi-download"></i> Tải tệp
+    </a>
+  </div>
+    
+</div>
+   
+{% endblock %}
+
+{% block script %}      
+<script>
+   
+  </script>
+{% endblock %}  

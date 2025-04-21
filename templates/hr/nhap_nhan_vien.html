@@ -6,7 +6,8 @@
     <h1 class="text-center mt-3 fw-bold">Nhập thông tin nhân viên</h1>
     <hr>
     
-    <form action="/submit_employee_info" method="post" class="mx-3">
+    <form action="{% url 'nhap_nhan_vien' %}" method="post" class="mx-3">
+      {% csrf_token %}
         <div class="row mb-3">
           <label for="fullName" class="col-sm-3 col-form-label">Họ và tên</label>
           <div class="col-sm-9">
@@ -98,7 +99,10 @@
       </form>
     
 </div>
-      
+   
+{% endblock %}
+
+{% block script %}      
 <script>
     const positionOptions = {
       "Phòng Kế toán": ["Kế toán trưởng", "Phó phòng kế toán", "Kế toán viên", "Học Việc", "Thử việc"],
@@ -121,4 +125,4 @@
       }
     }
   </script>
-{% endblock %}
+{% endblock %}  

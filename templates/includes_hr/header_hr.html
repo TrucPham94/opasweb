@@ -25,6 +25,11 @@
             <ul class="navbar-nav me-auto mt-2 mt-lg-0 mx-auto">
               <li class="nav-item">
                 <a class="nav-link fs-6 px-3 {% if request.path == '/' %}active fw-bold{% endif %}" 
+                   href="{% url 'index' %}">HR Home</a>
+              </li>
+
+              {% comment %} <li class="nav-item">
+                <a class="nav-link fs-6 px-3 {% if request.path == '/' %}active fw-bold{% endif %}" 
                    href="{% url 'home' %}">Chấm công</a>
               </li>
 
@@ -47,7 +52,7 @@
               <li class="nav-item">
                 <a class="nav-link fs-6 px-3 {% if request.path == '/' %}active fw-bold{% endif %}" 
                    href="{% url 'home' %}">Báo cáo</a>
-              </li>
+              </li> {% endcomment %}
             
               
             </ul>

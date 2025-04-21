@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="vi">
   {% comment %} head {% endcomment %}
-  {% include 'includes/head.html' %}
+  {% include 'includes_hr/head_hr.html' %}
 
   <body>
     {% comment %} header {% endcomment %}
@@ -27,5 +27,9 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    {% comment %} Script {% endcomment %}
+    {% block script %}
+    <!-- Custom scripts for specific pages can be added here -->
+    {% endblock %}
   </body>
 </html>

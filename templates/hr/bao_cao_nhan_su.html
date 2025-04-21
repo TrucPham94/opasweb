@@ -1,0 +1,92 @@
+{% extends "base_hr.html" %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-center fw-bold mb-4">📊 Báo cáo nhân sự theo phòng ban</h2>
+  <hr>
+  <!-- Chart -->
+  <div class="row g-0 gap-5">
+    {% comment %} chart {% endcomment %}
+    <div class="col-md-5 border border-2 rounded"> 
+      <canvas id="phongBanChart" height="100"></canvas>
+    </div>   
+    {% comment %} Bảng {% endcomment %}
+    <div class="col-md-5 border border-2 p-3 rounded"> 
+        <div class="mt-4">
+            <h4 class="fw-bold">Chi tiết thống kê:</h4>
+            <table class="table table-bordere">
+            
+            <thead class="table-light text-center">
+                <tr>
+                <th>Phòng ban</th>
+                <th>Số lượng nhân viên</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for item in thong_ke %}
+                <tr>
+                <td>{{ item.department }}</td>
+                <td class="text-center">{{ item.tong }}</td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="2" class="text-center">Không có dữ liệu</td></tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+    </div>   
+  </div>
+
+  <!-- Bảng -->
+  
+</div>
+{% endblock %}
+
+{% block script %}
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById("phongBanChart").getContext("2d");
+    const phongBanChart = new Chart(ctx, {
+      type: "bar", // hoặc "pie", "doughnut"
+      data: {
+        labels: {{ labels|safe }},
+        datasets: [{
+          label: "Số lượng nhân viên",
+          data: {{ data|safe }},
+          
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.6)',   // màu đỏ
+            'rgba(54, 162, 235, 0.6)',   // màu xanh biển
+            'rgba(255, 206, 86, 0.6)',   // màu vàng
+            'rgba(75, 192, 192, 0.6)',   // màu xanh lá
+            'rgba(153, 102, 255, 0.6)',  // màu tím
+            'rgba(255, 159, 64, 0.6)'    // màu cam
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            stepSize: 1
+          } 
+        },
+        
+      }
+    });
+  </script>
+  
+{% endblock %}

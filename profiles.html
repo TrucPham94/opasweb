@@ -1,137 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hồ sơ nhân viên</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .avatar {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
 
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+    
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row">
+    <!-- Tabs bên trái -->
 
-    <link rel="stylesheet" href="F:\company_website\static\css\style.css" />
+    <div class="col-md-3 border-end bg-dark p-3 rounded">
+      <div class="text-center mb-4">
+        <img src="../static\images\Logo\businesswoman-character-avatar-icon-vector-12800169.jpg" alt="Avatar" class="avatar mb-2">
+        <h5 class="mb-0 text-white">Nguyễn Văn A</h5>
+        <p class="text-white mt-3">Nhân viên kinh doanh</p>
+      </div>
+      <hr class="text-white">
 
-    <style>
-      .module-link:hover {
-        background-color: yellow;
-        cursor: pointer;
-      }
-    </style>
-  </head>
+      <ul class="nav flex-column nav-pills me-3" id="profileTabs" role="tablist" aria-orientation="vertical">
+        <li class="nav-item text-wh " role="presentation">
+          <button class="nav-link active" id="basic-tab" data-bs-toggle="pill" data-bs-target="#basic" type="button" role="tab">Thông tin cơ bản</button>
+        </li>
+       
+        <li class="nav-item " role="presentation">
+          <button class="nav-link" id="work-tab" data-bs-toggle="pill" data-bs-target="#work" type="button" role="tab">Quá trình làm việc</button>
+        </li>
+       
+        <li class="nav-item " role="presentation">
+          <button class="nav-link" id="reward-tab" data-bs-toggle="pill" data-bs-target="#reward" type="button" role="tab">Khen thưởng</button>
+        </li>
+       
+        <li class="nav-item " role="presentation">
+          <button class="nav-link" id="discipline-tab" data-bs-toggle="pill" data-bs-target="#discipline" type="button" role="tab">Kỷ luật</button>
+        </li>
+      </ul>
+    </div>
 
-  <body>
-    <div class="container py-5">
-      <h1 class="mb-4 text-center">Hệ thống Quản lý Nhân sự</h1>
-      <div class="row g-4">
-        <!-- Phân hệ Nhân sự -->
-        <div class="col-md-4">
-          <div class="card module-card h-100">
-            <div class="card-body">
-              <div class="module-icon mb-3">
-                <i class="bi bi-person-plus-fill"></i>
-              </div>
-              <div class="module-title mb-2">Phân hệ Nhân sự</div>
-              <ul class="list-unstyled">
-                <li"><a href="#" class="module-link">Thêm nhân viên</a></li>
-                <li"><a href="#" class="module-link">Danh sách nhân viên</a></li>
-                <li"><a href="#" class="module-link">Quản lý phòng ban</a></li>
-              </ul>
-            </div>
+    <!-- Nội dung bên phải -->
+    <div class="col-md-9  border-end bg-dark p-3 rounded">
+      <div class="tab-content text-white" id="profileTabsContent">
+
+        <div class="tab-pane fade show active" id="basic" role="tabpanel">
+          <h5 class="text-center fs-4">Thông tin cơ bản</h5>
+          <hr>
+          
+          <div class="table-responsive">
+            <table class="table table-info ">
+              
+              <tbody>
+                <tr class="">
+                  <td class="fw-bold py-2">Họ tên: </td>
+                  <td>Nguyễn Văn A</td>
+                </tr>
+
+                <tr class="">
+                  <td class="fw-bold py-2">Ngày sinh:</td>
+                  <td>01/01/1990</td>
+                </tr>
+
+                <tr class="">
+                  <td class="fw-bold py-2">Chức vụ:</td>
+                  <td>Nhân viên kinh doanh</td>
+                </tr>
+                
+              </tbody>
+            </table>
           </div>
+          
         </div>
-        <!-- Phân hệ Chấm công -->
-        <div class="col-md-4">
-          <div class="card module-card h-100">
-            <div class="card-body">
-              <div class="module-icon mb-3">
-                <i class="bi bi-clock-fill"></i>
-              </div>
-              <div class="module-title mb-2">Phân hệ Chấm công</div>
-              <ul class="list-unstyled">
-                <li><a href="#" class="module-link">Ghi nhận chấm công</a></li>
-                <li><a href="#" class="module-link">Báo cáo ngày công</a></li>
-                <li>
-                  <a href="#" class="module-link">Thống kê đi trễ/về sớm</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+        
+        <div class="tab-pane fade" id="work" role="tabpanel">
+          <h5 class="text-center fs-4">Quá trình làm việc</h5>
+          <hr>
+          <ul>
+            <li>2018 - 2020: Nhân viên phòng Kinh doanh</li>
+            <li>2021 - Nay: Trưởng nhóm Kinh doanh</li>
+          </ul>
         </div>
-        <!-- Phân hệ Lương thưởng -->
-        <div class="col-md-4">
-          <div class="card module-card h-100">
-            <div class="card-body">
-              <div class="module-icon mb-3">
-                <i class="bi bi-cash-stack"></i>
-              </div>
-              <div class="module-title mb-2">Phân hệ Lương thưởng</div>
-              <ul class="list-unstyled">
-                <li><a href="#" class="module-link">Tính lương</a></li>
-                <li><a href="#" class="module-link">Quản lý phụ cấp</a></li>
-                <li><a href="#" class="module-link">Xuất bảng lương</a></li>
-              </ul>
-            </div>
-          </div>
+
+        <div class="tab-pane fade" id="reward" role="tabpanel">
+          <h5 class="text-center fs-4">Khen thưởng</h5>
+          <hr>
+          <ul>
+            <li>Nhân viên xuất sắc năm 2022</li>
+            <li>Bằng khen đóng góp doanh số quý 1/2023</li>
+          </ul>
         </div>
-        <!-- Phân hệ Tuyển dụng -->
-        <div class="col-md-4">
-          <div class="card module-card h-100">
-            <div class="card-body">
-              <div class="module-icon mb-3">
-                <i class="bi bi-person-badge-fill"></i>
-              </div>
-              <div class="module-title mb-2">Phân hệ Tuyển dụng</div>
-              <ul class="list-unstyled">
-                <li><a href="#" class="module-link">Đăng tin tuyển dụng</a></li>
-                <li><a href="#" class="module-link">Quản lý ứng viên</a></li>
-                <li><a href="#" class="module-link">Lưu hồ sơ ứng viên</a></li>
-              </ul>
-            </div>
-          </div>
+        
+        <div class="tab-pane fade" id="discipline" role="tabpanel">
+          <h5 class="text-center fs-4">Kỷ luật</h5>
+          <hr>
+          <p>Không có vi phạm.</p>
         </div>
-        <!-- Phân hệ Khen thưởng – Kỷ luật -->
-        <div class="col-md-4">
-          <div class="card module-card h-100">
-            <div class="card-body">
-              <div class="module-icon mb-3">
-                <i class="bi bi-award-fill"></i>
-              </div>
-              <div class="module-title mb-2">Khen thưởng – Kỷ luật</div>
-              <ul class="list-unstyled">
-                <li><a href="#" class="module-link">Ghi nhận thành tích</a></li>
-                <li><a href="#" class="module-link">Ghi nhận vi phạm</a></li>
-                <li>
-                  <a href="#" class="module-link">Quản lý mức thưởng/phạt</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- Phân hệ Báo cáo -->
-        <div class="col-md-4">
-          <div class="card module-card h-100">
-            <div class="card-body">
-              <div class="module-icon mb-3">
-                <i class="bi bi-bar-chart-fill"></i>
-              </div>
-              <div class="module-title mb-2">Phân hệ Báo cáo</div>
-              <ul class="list-unstyled">
-                <li><a href="#" class="module-link">Báo cáo nhân sự</a></li>
-                <li><a href="#" class="module-link">Biểu đồ định biên</a></li>
-                <li><a href="#" class="module-link">Biến động nhân sự</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </div>
-  </body>
+
+    
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

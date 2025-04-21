@@ -1,0 +1,149 @@
+
+{% extends 'base_hr.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-3">
+    <h1 class=" fw-bold text-center mb-4">Profile Nhân Viên</h1>
+    <div class="row">
+      <!-- Tabs bên trái -->
+  
+      <div class="col-md-3 border-end bg-dark p-3 rounded">
+        <div class="text-center mb-4">
+          <img src="{% static 'images\Logo\businesswoman-character-avatar-icon-vector-12800169.jpg' %}" alt="Avatar" class="avatar_hr mb-2">
+          <h5 class="mb-0 text-white">{{nhan_vien.fullName}}</h5>
+          <p class="text-white mt-3">{{nhan_vien.position}}</p>
+        </div>
+        <hr class="text-white">
+  
+        <ul class="nav flex-column nav-pills me-3" id="profileTabs" role="tablist" aria-orientation="vertical">
+          <li class="nav-item text-wh " role="presentation">
+            <button class="nav-link active" id="basic-tab" data-bs-toggle="pill" data-bs-target="#basic" type="button" role="tab">Thông tin cơ bản</button>
+          </li>
+         
+          <li class="nav-item " role="presentation">
+            <button class="nav-link" id="work-tab" data-bs-toggle="pill" data-bs-target="#work" type="button" role="tab">Quá trình làm việc</button>
+          </li>
+         
+          <li class="nav-item " role="presentation">
+            <button class="nav-link" id="reward-tab" data-bs-toggle="pill" data-bs-target="#reward" type="button" role="tab">Khen thưởng</button>
+          </li>
+         
+          <li class="nav-item " role="presentation">
+            <button class="nav-link" id="discipline-tab" data-bs-toggle="pill" data-bs-target="#discipline" type="button" role="tab">Kỷ luật</button>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Nội dung bên phải -->
+      <div class="col-md-9  border-end bg-dark p-3 rounded">
+        <!-- Nút in hồ sơ -->
+        <div class="text-end mb-3">
+          <button class="btn btn-outline-light" onclick="printProfile()">🖨️ In Hồ Sơ</button>
+        </div>
+
+        <div class="tab-content text-white" id="profileTabsContent">
+  
+          <div class="tab-pane fade show active" id="basic" role="tabpanel">
+            <h5 class="text-center fs-4">Thông tin cơ bản</h5>
+            <hr>
+            <div class="table-responsive">
+              <table class="table table-info ">
+                
+                <tbody>
+                  <tr>
+                    <th scope="row" class="fw-bold text-nowrap py-2 px-3 w-25">Họ tên:</th>
+                    <td class="py-2 px-3">{{ nhan_vien.fullName }}</td>
+                  </tr>
+                
+                  <tr>
+                    <th scope="row" class="fw-bold text-nowrap py-2 px-3 w-25">Ngày sinh:</th>
+                    <td class="py-2 px-3">{{ nhan_vien.dob|date:"d/m/Y" }}</td>
+                  </tr>
+                
+                  <tr>
+                    <th scope="row" class="fw-bold text-nowrap py-2 px-3 w-25">Chức vụ:</th>
+                    <td class="py-2 px-3">{{ nhan_vien.position }}</td>
+                  </tr>
+                </tbody>
+                
+              </table>
+            </div>
+           
+          
+            </div>
+          
+          <div class="tab-pane fade" id="work" role="tabpanel">
+            <h5 class="text-center fs-4">Quá trình làm việc</h5>
+            <hr>
+            <ul>
+              <li>2018 - 2020: Nhân viên phòng Kinh doanh</li>
+              <li>2021 - Nay: Trưởng nhóm Kinh doanh</li>
+            </ul>
+          </div>
+  
+          <div class="tab-pane fade" id="reward" role="tabpanel">
+            <h5 class="text-center fs-4">Khen thưởng</h5>
+            <hr>
+            <ul>
+              <li>Nhân viên xuất sắc năm 2022</li>
+              <li>Bằng khen đóng góp doanh số quý 1/2023</li>
+            </ul>
+          </div>
+          
+          <div class="tab-pane fade" id="discipline" role="tabpanel">
+            <h5 class="text-center fs-4">Kỷ luật</h5>
+            <hr>
+            <p>Không có vi phạm.</p>
+          </div>
+        
+        </div>
+      </div>
+  
+      
+    </div>
+
+    
+  </div>
+  
+   
+{% endblock %}
+
+{% block script %}
+<script>
+  function printProfile() {
+    // Lưu nội dung gốc
+    const originalContent = document.body.innerHTML;
+
+    // Lấy nội dung phần cần in
+    const printArea = document.querySelector("#profileTabsContent").cloneNode(true);
+
+    // Hiển thị tất cả các tab (ẩn các class fade, active...)
+    printArea.querySelectorAll(".tab-pane").forEach(tab => {
+      tab.classList.add("show", "active");
+    });
+
+    // Tạo HTML mới chỉ với nội dung cần in
+    const printWindow = window.open('', '', 'width=900,height=1000');
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>In Hồ Sơ Nhân Viên</title>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <style>
+            body { padding: 20px; font-family: sans-serif; }
+            h5 { margin-top: 30px; }
+          </style>
+        </head>
+        <body>
+          <h2 class="text-center mb-4">Hồ Sơ Nhân Viên</h2>
+          ${printArea.innerHTML}
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.focus();
+    printWindow.print();
+    printWindow.close();
+  }
+</script>
+{% endblock %}

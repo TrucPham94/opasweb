@@ -325,15 +325,3 @@ body {
 }
 
 
-/* hr */
-.module-link {
-  text-decoration: none;
-  padding: 5px;
-  
-
-}
-
-.module-link:hover {
-  background-color: #89d99c;
-  border-radius: 10px;
-}
